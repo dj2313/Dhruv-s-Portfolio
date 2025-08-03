@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Gradient animation for the name */
 @keyframes gradient-x {
   0%, 100% {
@@ -49,4 +50,57 @@ html {
 .focus\:ring-2:focus-visible {
   outline: none;
   box-shadow: 0 0 0 2px var(--tw-ring-color);
+=======
+/* Gradient animation for the name */
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .animate-gradient-x,
+  .animate-pulse,
+  .animate-bounce {
+    animation: none;
+  }
+  
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-white\/10 {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .border-white\/20 {
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Focus visible improvements */
+.focus\:ring-2:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--tw-ring-color);
+>>>>>>> 17cfa064a2e8ea2bc04b8046366a8d2728b0d69a
 }
