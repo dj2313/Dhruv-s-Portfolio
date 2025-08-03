@@ -11,9 +11,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-spring/three": "^10.0.1",
+    "@react-three/drei": "^10.6.1",
+    "@react-three/fiber": "^9.3.0",
+    "framer-motion": "^12.23.12",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-spring": "^10.0.1",
+    "three": "^0.179.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
@@ -30,5 +36,18 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",
     "vite": "^5.4.2"
-  }
+  },
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dj2313/Portfolio-Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dj2313/Portfolio-Website/issues"
+  },
+  "homepage": "https://github.com/dj2313/Portfolio-Website#readme",
+  "description": ""
 }
