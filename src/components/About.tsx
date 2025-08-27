@@ -1,11 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, Coffee, Code, Smartphone, Globe, Server, Github, Linkedin, Award, Users, Clock, Star, Zap, Target } from 'lucide-react';
+import Background from './shared/Background';
 
-const About = () => {
+const About: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [counters, setCounters] = useState({ projects: 0, clients: 0, experience: 0 });
 
   useEffect(() => {
+    // Set visible immediately on mobile or small screens
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      setIsVisible(true);
+      // Animate counters immediately on mobile
+      const animateCounter = (key: keyof typeof counters, target: number) => {
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          setCounters(prev => ({ ...prev, [key]: Math.floor(current) }));
+        }, 30);
+      };
+      
+      animateCounter('projects', 50);
+      animateCounter('clients', 25);
+      animateCounter('experience', 3);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -29,7 +54,7 @@ const About = () => {
           animateCounter('experience', 3);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 } // Reduced threshold for better mobile compatibility
     );
 
     const element = document.getElementById('about');
@@ -76,17 +101,16 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
-      </div>
+    <section 
+      id="about" 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
+      aria-label="About section"
+    >
+      <Background />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'}`}>
           <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-6">
             <Star className="w-4 h-4 text-cyan-400 mr-2" />
             <span className="text-white text-sm font-medium">About Me</span>
@@ -102,7 +126,7 @@ const About = () => {
         </div>
 
         {/* Stats */}
-        <div className={`grid md:grid-cols-3 gap-8 mb-20 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`grid md:grid-cols-3 gap-8 mb-20 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'}`}>
           {stats.map((stat, index) => (
             <div key={stat.label} className="text-center group">
               <div className="relative">
@@ -120,7 +144,7 @@ const About = () => {
         </div>
 
         {/* Core Values */}
-        <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'}`}>
           {values.map((value, index) => (
             <div key={value.title} className="group relative">
               {/* Glow Effect */}
@@ -157,7 +181,7 @@ const About = () => {
         </div>
 
         {/* Personal Info */}
-        <div className={`max-w-4xl mx-auto transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`max-w-4xl mx-auto transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-100 translate-y-0'}`}>
           <div className="relative group">
             {/* Glow Effect */}
             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-500" />

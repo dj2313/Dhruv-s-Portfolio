@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 {
   "version": 2,
   "buildCommand": "npm run build",
@@ -11,18 +11,4 @@
       "destination": "/index.html"
     }
   ]
-=======
-{
-  "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "installCommand": "npm install",
-  "framework": "vite",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
->>>>>>> 17cfa064a2e8ea2bc04b8046366a8d2728b0d69a
 }

@@ -11,10 +11,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/playfair-display": "^5.2.6",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "rollup": "4.18.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
@@ -36,12 +38,20 @@
     "type": "git",
     "url": "git+https://github.com/dj2313/Dhruv-s-Portfolio.git"
   },
-  "keywords": ["portfolio", "react", "typescript", "vite"],
+  "keywords": [
+    "portfolio",
+    "react",
+    "typescript",
+    "vite"
+  ],
   "author": "Dhruv Trivedi <djdhruv2424@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dj2313/Dhruv-s-Portfolio/issues"
   },
   "homepage": "https://github.com/dj2313/Dhruv-s-Portfolio#readme",
-  "description": "Modern portfolio website built with React, TypeScript, and Tailwind CSS"
+  "description": "Modern portfolio website built with React, TypeScript, and Tailwind CSS",
+  "engines": {
+    "node": "18.x"
+  }
 }
