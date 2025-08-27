@@ -17,9 +17,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
-  "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.6.1"
-  },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
     "@types/react": "^18.3.23",
@@ -55,6 +52,6 @@
   "homepage": "https://github.com/dj2313/Dhruv-s-Portfolio#readme",
   "description": "Modern portfolio website built with React, TypeScript, and Tailwind CSS",
   "engines": {
-    "node": "18.x"
+    "node": ">=18.0.0 <24.0.0"
   }
 }
